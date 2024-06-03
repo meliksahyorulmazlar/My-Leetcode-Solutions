@@ -1,7 +1,12 @@
-class Solution:
-    def isPossibleToSplit(self, nums: List[int]) -> bool:
-        nums = [num for num in nums if nums.count(num)>2]
-        if len(nums) >=1:
-            return False
-        else:
-            return True
+class Solution(object):
+    def isPossibleToSplit(self, nums):
+        dict = {}
+        for num in nums:
+            if num not in dict:
+                dict[num] = 1
+            else:
+                dict[num] += 1
+                if dict[num] > 2:
+                    return False
+        return True
+
