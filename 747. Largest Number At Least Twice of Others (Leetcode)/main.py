@@ -1,9 +1,9 @@
 class Solution:
-    def dominantIndex(self, nums: list[int]) -> int:
-        x = sorted(nums)
-        print(x)
-        if x[-1] >= 2* x[-2]:
-            print(nums)
-        else:
-            return -1
-
+    def dominantIndex(self, nums: List[int]) -> int:
+        greatest = max(nums)
+        index = nums.index(greatest)
+        nums.remove(greatest)
+        second = max(nums)
+        if greatest >= 2*second:
+            return index
+        return -1
