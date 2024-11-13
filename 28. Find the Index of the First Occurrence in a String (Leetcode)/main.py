@@ -1,12 +1,8 @@
-class Solution:
-    def strStr(self, haystack: str, needle: str) -> int:
-        for i in range(len(haystack)):
-            for j in range(len(needle)):
-                if haystack[i]
+class Solution(object):
+    def strStr(self, haystack, needle):
+        sentence = haystack.replace(needle, "$")
+        for i in range(len(sentence)):
+            if sentence[i] == "$":
+                return i
 
-
-
-sol = Solution()
-sol.strStr("sadbutsad","sad")
-
-
+        return -1
